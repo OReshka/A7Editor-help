@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "sections": [
+    {
+      "id": "getting-started",
+      "title": "Как начать",
+      "icon": "book",
+      "articles": [
+        {
+          "id": "welcome",
+          "title": "Добро пожаловать в A7Editor",
+          "file": "welcome.md",
+          "cards": ["quickstart", "download", "commit", "release-overview"]
+        },
+        {
+          "id": "quickstart",
+          "title": "Быстрый старт за 5 минут",
+          "file": "quickstart.md",
+          "summary": "Пройти весь путь за 5 минут: от подключения до push",
+          "seeAlso": ["download", "commit", "connect"]
+        },
+        {
+          "id": "interface",
+          "title": "Обзор интерфейса",
+          "file": "interface.md",
+          "seeAlso": ["quickstart"]
+        },
+        {
+          "id": "connect",
+          "title": "Подключение к серверу",
+          "file": "connect.md",
+          "seeAlso": ["download"]
+        }
+      ]
+    },
+    {
+      "id": "configuration",
+      "title": "Работа с конфигурацией",
+      "icon": "edit",
+      "articles": [
+        {
+          "id": "download",
+          "title": "Скачать конфигурацию",
+          "file": "download.md",
+          "summary": "Загрузить конфигурацию с сервера и открыть в редакторе",
+          "seeAlso": ["edit-types", "connect"]
+        },
+        {
+          "id": "edit-types",
+          "title": "Редактирование типов",
+          "file": "edit-types.md",
+          "seeAlso": ["check", "commit"]
+        },
+        {
+          "id": "check",
+          "title": "Проверка изменений",
+          "file": "check.md",
+          "seeAlso": ["edit-types"]
+        },
+        {
+          "id": "inheritance",
+          "title": "Наследование и Override",
+          "file": "inheritance.md",
+          "seeAlso": ["edit-types"]
+        },
+        {
+          "id": "commit",
+          "title": "Commit и push изменений",
+          "file": "commit.md",
+          "summary": "Зафиксировать изменения и отправить в репозиторий",
+          "seeAlso": ["check", "release-overview"]
+        }
+      ]
+    },
+    {
+      "id": "releases",
+      "title": "Создание релизов",
+      "icon": "package",
+      "articles": [
+        {
+          "id": "release-overview",
+          "title": "Обзор процесса релиза",
+          "file": "release-overview.md",
+          "summary": "Поднять версию, собрать и опубликовать сборку",
+          "cards": ["release-bump", "release-build", "release-publish"],
+          "seeAlso": ["rollback"]
+        },
+        {
+          "id": "release-bump",
+          "title": "Шаг 1. Поднять версию",
+          "file": "release-bump.md",
+          "summary": "Указать новый номер версии конфигурации",
+          "seeAlso": ["release-build"]
+        },
+        {
+          "id": "release-build",
+          "title": "Шаг 2. Собрать сборку",
+          "file": "release-build.md",
+          "summary": "Подготовить артефакты релиза из снимка",
+          "seeAlso": ["release-publish"]
+        },
+        {
+          "id": "release-publish",
+          "title": "Шаг 3. Опубликовать релиз",
+          "file": "release-publish.md",
+          "summary": "Опубликовать собранный релиз и зафиксировать версию",
+          "seeAlso": ["release-overview"]
+        },
+        {
+          "id": "rollback",
+          "title": "Откат к предыдущей версии",
+          "file": "rollback.md",
+          "seeAlso": ["release-overview"]
+        }
+      ]
+    },
+    {
+      "id": "faq-help",
+      "title": "FAQ и справка",
+      "icon": "info",
+      "articles": [
+        {
+          "id": "faq",
+          "title": "Частые вопросы",
+          "file": "faq.md",
+          "format": "faq",
+          "seeAlso": ["shortcuts", "troubleshooting"],
+          "qa": [
+            {
+              "q": "Можно я просто спрошу у разработчика?",
+              "a": "Можно 🙂 — но сначала загляните сюда и в поиск вверху. 9 из 10 вопросов уже описаны, и ответ найдётся быстрее, чем дойдёт сообщение."
+            },
+            {
+              "q": "Чем отличается push файла, пакета и конфигурации?",
+              "a": "**Push файла** отправляет один тип, **push пакета** — все типы пакета, **push конфигурации** — весь снимок целиком. Выбирайте минимально необходимый объём."
+            },
+            {
+              "q": "Где хранятся токены серверов?",
+              "a": "В системном keychain. В репозиторий конфигурации они не попадают."
+            },
+            {
+              "q": "Можно ли работать с несколькими серверами сразу?",
+              "a": "Да. Создайте несколько профилей и переключайтесь между ними в правом верхнем углу панели инструментов."
+            },
+            {
+              "q": "Как переключить тему оформления?",
+              "a": "**Настройки → Оформление**, либо команда «Тема» в палитре (Ctrl+K). Доступны Dark, Warm и Classic."
+            },
+            {
+              "q": "Что значит точка рядом с файлом в дереве?",
+              "a": "Файл изменён и ещё не сохранён или не закоммичен."
+            }
+          ]
+        },
+        {
+          "id": "shortcuts",
+          "title": "Горячие клавиши",
+          "file": "shortcuts.md"
+        },
+        {
+          "id": "troubleshooting",
+          "title": "Устранение неполадок",
+          "file": "troubleshooting.md",
+          "seeAlso": ["faq"]
+        }
+      ]
+    }
+  ]
+}
