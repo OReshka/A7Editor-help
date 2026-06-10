@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
+  "contentVersion": "2026-06-10.1",
   "sections": [
     {
       "id": "getting-started",
@@ -8,160 +9,416 @@
       "articles": [
         {
           "id": "welcome",
-          "title": "Добро пожаловать в A7Editor",
+          "title": "Добро пожаловать",
           "file": "welcome.md",
-          "cards": ["quickstart", "download", "commit", "release-overview"]
+          "format": "hub",
+          "summary": "Что такое A7Editor и с чего начать.",
+          "cards": ["quickstart", "interface", "download", "connect", "faq", "shortcuts"]
         },
         {
           "id": "quickstart",
-          "title": "Быстрый старт за 5 минут",
+          "title": "Быстрый старт",
           "file": "quickstart.md",
-          "summary": "Пройти весь путь за 5 минут: от подключения до push",
-          "seeAlso": ["download", "commit", "connect"]
+          "summary": "От запуска до первого push за 10 минут.",
+          "seeAlso": ["download", "connect", "check", "push"]
         },
         {
           "id": "interface",
           "title": "Обзор интерфейса",
           "file": "interface.md",
-          "seeAlso": ["quickstart"]
-        },
-        {
-          "id": "connect",
-          "title": "Подключение к серверу",
-          "file": "connect.md",
-          "seeAlso": ["download"]
+          "summary": "Главное окно: тулбар, дерево, редактор, панели.",
+          "seeAlso": ["editor", "settings-window", "shortcuts"]
         }
       ]
     },
     {
-      "id": "configuration",
-      "title": "Работа с конфигурацией",
-      "icon": "edit",
+      "id": "configurations",
+      "title": "Конфигурации и сессии",
+      "icon": "config",
       "articles": [
         {
           "id": "download",
-          "title": "Скачать конфигурацию",
+          "title": "Открыть конфигурацию",
           "file": "download.md",
-          "summary": "Загрузить конфигурацию с сервера и открыть в редакторе",
-          "seeAlso": ["edit-types", "connect"]
+          "summary": "Открыть папку, отдельный пакет или импортировать из JSON.",
+          "seeAlso": ["workflows", "configuration-yaml", "quickstart"]
         },
         {
-          "id": "edit-types",
-          "title": "Редактирование типов",
-          "file": "edit-types.md",
-          "seeAlso": ["check", "commit"]
+          "id": "workflows",
+          "title": "Сессии (workflows)",
+          "file": "workflows.md",
+          "summary": "Рабочее пространство поверх конфигурации: пути, панели, серверы.",
+          "seeAlso": ["download", "configuration-yaml"]
         },
         {
-          "id": "check",
-          "title": "Проверка изменений",
-          "file": "check.md",
-          "seeAlso": ["edit-types"]
+          "id": "configuration-yaml",
+          "title": "configuration.yaml",
+          "file": "configuration-yaml.md",
+          "summary": "Шаблон с требованиями и запечённый релиз — один формат, два типа.",
+          "seeAlso": ["release-overview", "release-make"]
+        },
+        {
+          "id": "update-environment",
+          "title": "Обновить окружение с сервера",
+          "file": "update-environment.md",
+          "summary": "Подтянуть свежие версии системных пакетов с сервера.",
+          "seeAlso": ["connect", "download"]
+        }
+      ]
+    },
+    {
+      "id": "packets-types",
+      "title": "Пакеты и типы",
+      "icon": "package",
+      "articles": [
+        {
+          "id": "create-packet",
+          "title": "Создать пакет",
+          "file": "create-packet.md",
+          "summary": "Новый пакет — логическая группа типов.",
+          "seeAlso": ["create-type", "tree-actions"]
+        },
+        {
+          "id": "create-type",
+          "title": "Создать тип",
+          "file": "create-type.md",
+          "summary": "Новый DBO/JS-тип: uid, версия, поля, методы.",
+          "seeAlso": ["create-packet", "editor", "check"]
+        },
+        {
+          "id": "tree-actions",
+          "title": "Дерево проекта",
+          "file": "tree-actions.md",
+          "summary": "Переименование, удаление, отмена структурных действий.",
+          "seeAlso": ["create-packet", "create-type"]
+        }
+      ]
+    },
+    {
+      "id": "editing",
+      "title": "Редактирование",
+      "icon": "edit",
+      "articles": [
+        {
+          "id": "editor",
+          "title": "Редактор кода",
+          "file": "editor.md",
+          "summary": "Подсветка, автодополнение, переход к декларации, форматирование.",
+          "seeAlso": ["inheritance", "editor-search", "shortcuts"]
         },
         {
           "id": "inheritance",
           "title": "Наследование и Override",
           "file": "inheritance.md",
-          "seeAlso": ["edit-types"]
+          "summary": "Панель наследования: что унаследовано и как переопределить.",
+          "seeAlso": ["editor", "type-review"]
+        },
+        {
+          "id": "type-review",
+          "title": "Ревью типа",
+          "file": "type-review.md",
+          "summary": "Табличный обзор полей и методов типа с замечаниями.",
+          "seeAlso": ["check", "inheritance"]
+        },
+        {
+          "id": "panes",
+          "title": "Несколько панелей",
+          "file": "panes.md",
+          "summary": "Разделить редактор и смотреть два файла рядом.",
+          "seeAlso": ["editor", "interface"]
+        },
+        {
+          "id": "editor-search",
+          "title": "Поиск и сворачивание кода",
+          "file": "editor-search.md",
+          "summary": "Поиск по файлу и фолдинг блоков.",
+          "seeAlso": ["editor", "shortcuts"]
+        }
+      ]
+    },
+    {
+      "id": "checking",
+      "title": "Проверка",
+      "icon": "check",
+      "articles": [
+        {
+          "id": "check",
+          "title": "Проверка (Check)",
+          "file": "check.md",
+          "summary": "Проверить файл или конфигурацию без отправки на сервер.",
+          "seeAlso": ["push", "logs"]
+        },
+        {
+          "id": "logs",
+          "title": "Панель логов и диагностика",
+          "file": "logs.md",
+          "summary": "Где искать ошибки, предупреждения и результат операций.",
+          "seeAlso": ["check", "push"]
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "title": "Git и версии",
+      "icon": "branch",
+      "articles": [
+        {
+          "id": "git-setup",
+          "title": "Настроить git",
+          "file": "git-setup.md",
+          "summary": "Авторство, SSH-ключ или HTTPS-токен, проверка доступа.",
+          "seeAlso": ["versions", "commit"]
+        },
+        {
+          "id": "versions",
+          "title": "Управление версиями",
+          "file": "versions.md",
+          "summary": "Окно версий: статусы репозиториев, pull, push, история.",
+          "personas": ["developer"],
+          "seeAlso": ["commit", "git-setup", "release-overview"]
         },
         {
           "id": "commit",
-          "title": "Commit и push изменений",
+          "title": "Закоммитить изменения",
           "file": "commit.md",
-          "summary": "Зафиксировать изменения и отправить в репозиторий",
-          "seeAlso": ["check", "release-overview"]
+          "summary": "Коммит одной кнопкой: версия, тег, push.",
+          "personas": ["developer"],
+          "seeAlso": ["versions", "git-setup"]
+        }
+      ]
+    },
+    {
+      "id": "servers",
+      "title": "Серверы и публикация",
+      "icon": "server",
+      "articles": [
+        {
+          "id": "connect",
+          "title": "Подключение к серверу",
+          "file": "connect.md",
+          "summary": "Профили серверов: URL, токен, проверка соединения.",
+          "seeAlso": ["push", "admin", "update-environment"]
+        },
+        {
+          "id": "push",
+          "title": "Push на сервер",
+          "file": "push.md",
+          "summary": "Отправить тип, пакет или конфигурацию на серверы.",
+          "seeAlso": ["connect", "check", "push-status"]
+        },
+        {
+          "id": "push-status",
+          "title": "Окно статуса Push",
+          "file": "push-status.md",
+          "summary": "Матрица «тип × сервер»: прогресс, повтор, пропуск.",
+          "seeAlso": ["push", "logs"]
+        },
+        {
+          "id": "admin",
+          "title": "Админ-панели",
+          "file": "admin.md",
+          "summary": "Объекты, логи и скрипты сервера прямо в редакторе.",
+          "personas": ["devops"],
+          "seeAlso": ["connect", "push"]
         }
       ]
     },
     {
       "id": "releases",
-      "title": "Создание релизов",
-      "icon": "package",
+      "title": "Релизы",
+      "icon": "rocket",
       "articles": [
         {
           "id": "release-overview",
-          "title": "Обзор процесса релиза",
+          "title": "Релизы: как это устроено",
           "file": "release-overview.md",
-          "summary": "Поднять версию, собрать и опубликовать сборку",
-          "cards": ["release-bump", "release-build", "release-publish"],
-          "seeAlso": ["rollback"]
+          "summary": "Шаблон и запечённый релиз, каналы и флаги ревью.",
+          "cards": ["release-make", "release-flags", "release-channels"],
+          "seeAlso": ["configuration-yaml", "release-registry"]
         },
         {
-          "id": "release-bump",
-          "title": "Шаг 1. Поднять версию",
-          "file": "release-bump.md",
-          "summary": "Указать новый номер версии конфигурации",
-          "seeAlso": ["release-build"]
+          "id": "release-registry",
+          "title": "Реестр релизов",
+          "file": "release-registry.md",
+          "summary": "Все релизы конфигурации: статусы, флаги, каналы, задачи.",
+          "seeAlso": ["release-make", "release-flags", "release-channels", "release-issues"]
         },
         {
-          "id": "release-build",
-          "title": "Шаг 2. Собрать сборку",
-          "file": "release-build.md",
-          "summary": "Подготовить артефакты релиза из снимка",
-          "seeAlso": ["release-publish"]
+          "id": "release-make",
+          "title": "Сделать релиз",
+          "file": "release-make.md",
+          "summary": "Собрать набор пакетов и запечь configuration.yaml.",
+          "personas": ["tester", "devops"],
+          "seeAlso": ["release-registry", "release-overview"]
         },
         {
-          "id": "release-publish",
-          "title": "Шаг 3. Опубликовать релиз",
-          "file": "release-publish.md",
-          "summary": "Опубликовать собранный релиз и зафиксировать версию",
-          "seeAlso": ["release-overview"]
+          "id": "release-flags",
+          "title": "Флаги ревью",
+          "file": "release-flags.md",
+          "summary": "Вердикт проверки релиза: от красного до зелёного.",
+          "personas": ["tester"],
+          "seeAlso": ["release-channels", "release-registry"]
         },
         {
-          "id": "rollback",
-          "title": "Откат к предыдущей версии",
-          "file": "rollback.md",
-          "seeAlso": ["release-overview"]
+          "id": "release-channels",
+          "title": "Каналы релиза",
+          "file": "release-channels.md",
+          "summary": "stable / production / qa — метки продвижения версий.",
+          "personas": ["devops"],
+          "seeAlso": ["release-flags", "release-registry"]
+        },
+        {
+          "id": "release-issues",
+          "title": "Задачи по релизу",
+          "file": "release-issues.md",
+          "summary": "Проблемы и замечания, привязанные к версии релиза.",
+          "personas": ["tester"],
+          "seeAlso": ["release-flags", "release-registry"]
         }
       ]
     },
     {
-      "id": "faq-help",
-      "title": "FAQ и справка",
+      "id": "settings",
+      "title": "Настройки",
+      "icon": "settings",
+      "articles": [
+        {
+          "id": "settings-window",
+          "title": "Окно настроек",
+          "file": "settings-window.md",
+          "summary": "Общие, редактор, гит, оформление, горячие клавиши.",
+          "seeAlso": ["themes", "git-setup", "shortcuts-setup"]
+        },
+        {
+          "id": "themes",
+          "title": "Темы и оформление",
+          "file": "themes.md",
+          "summary": "Тёмная, тёплая и классическая темы, шрифты.",
+          "seeAlso": ["settings-window"]
+        },
+        {
+          "id": "shortcuts-setup",
+          "title": "Переназначить горячие клавиши",
+          "file": "shortcuts-setup.md",
+          "summary": "Свои сочетания для частых действий.",
+          "seeAlso": ["shortcuts", "settings-window"]
+        },
+        {
+          "id": "app-update",
+          "title": "Обновление приложения",
+          "file": "app-update.md",
+          "summary": "Проверка обновлений, установка и откат.",
+          "seeAlso": ["help-update"]
+        },
+        {
+          "id": "help-update",
+          "title": "Обновление справки",
+          "file": "help-update.md",
+          "summary": "Справка загружается из сети и обновляется сама.",
+          "seeAlso": ["app-update"]
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Справочник",
       "icon": "info",
       "articles": [
         {
           "id": "faq",
-          "title": "Частые вопросы",
+          "title": "Частые вопросы (FAQ)",
           "file": "faq.md",
           "format": "faq",
-          "seeAlso": ["shortcuts", "troubleshooting"],
+          "summary": "Короткие ответы на типовые вопросы.",
+          "seeAlso": ["troubleshooting", "shortcuts"],
           "qa": [
             {
-              "q": "Можно я просто спрошу у разработчика?",
-              "a": "Можно 🙂 — но сначала загляните сюда и в поиск вверху. 9 из 10 вопросов уже описаны, и ответ найдётся быстрее, чем дойдёт сообщение."
+              "q": "С чего начать работу?",
+              "a": "Со статьи «Быстрый старт»: настроить сервер, открыть конфигурацию, отредактировать тип, проверить и запушить. Десять минут — и весь цикл пройден."
             },
             {
-              "q": "Чем отличается push файла, пакета и конфигурации?",
-              "a": "**Push файла** отправляет один тип, **push пакета** — все типы пакета, **push конфигурации** — весь снимок целиком. Выбирайте минимально необходимый объём."
+              "q": "Комбобокс сервера в тулбаре красный и пишет «Серверы не настроены». Что делать?",
+              "a": "Кликните по нему — откроется окно «Профили серверов». Нажмите «Новый», заполните «Базовый URL» и «Bearer-токен», нажмите «Проверить подключение» и закройте окно. Подробности — в статье «Подключение к серверу»."
             },
             {
-              "q": "Где хранятся токены серверов?",
-              "a": "В системном keychain. В репозиторий конфигурации они не попадают."
+              "q": "Чем «Проверить» отличается от «Пропушить»?",
+              "a": "**Проверить** гоняет `a7dbojs check` локально и ничего не отправляет. **Пропушить** сохраняет файл и загружает его на активный сервер. Сначала проверяйте, потом пушьте."
             },
             {
-              "q": "Можно ли работать с несколькими серверами сразу?",
-              "a": "Да. Создайте несколько профилей и переключайтесь между ними в правом верхнем углу панели инструментов."
+              "q": "Чем push файла отличается от push пакета и конфигурации?",
+              "a": "**Push файла** отправляет один тип, **push пакета** — все типы пакета в порядке зависимостей, **push конфигурации** — всё целиком. Выбирайте минимально необходимый объём."
+            },
+            {
+              "q": "Push упал с ошибкой 401 или 403. Куда смотреть?",
+              "a": "Сервер отверг авторизацию. Откройте «Настройки → Профили серверов…» и проверьте Bearer-токен активного профиля. Код ответа виден в панели логов."
+            },
+            {
+              "q": "«Проверить подключение» показывает сбой, хотя сервер работает.",
+              "a": "Проверьте «Базовый URL» (схема, хост, порт) и сеть. Ответ 4xx считается успехом теста — сервер ответил, просто отверг запрос (обычно из-за токена). Для самоподписанных сертификатов на dev включите «Разрешить небезопасный TLS (dev)»."
+            },
+            {
+              "q": "Файл лежит в папке пакета, но в дереве проекта его нет.",
+              "a": "Дерево показывает только то, что записано в `configuration.yaml`. Файлы, не упомянутые в манифесте, редактор игнорирует. Добавьте тип через дерево — манифест обновится сам."
+            },
+            {
+              "q": "Что такое сессия (workflow) и зачем она нужна?",
+              "a": "Сессия — ваше локальное рабочее пространство поверх конфигурации: пути к пакетам, открытые файлы, панели, выбранные серверы. Шаблон конфигурации при работе не меняется — все локальные решения живут в сессии."
+            },
+            {
+              "q": "Удалил тип по ошибке. Можно вернуть?",
+              "a": "Да: «Правка → Отменить» (Ctrl+Z) откатывает последнее структурное действие — создание, переименование или удаление пакета и типа."
+            },
+            {
+              "q": "Что такое @uid и можно ли его редактировать?",
+              "a": "Стабильный идентификатор класса, поля или метода. По нему сервер понимает, что элемент тот же самый, даже после переименования. Никогда не меняйте uid руками."
+            },
+            {
+              "q": "Git push отвергнут (rejected). Что делать?",
+              "a": "Удалённый репозиторий ушёл вперёд. В окне «Управление версиями…» сделайте «Затянуть» (pull) для репозитория, разрешите конфликты при необходимости и повторите push."
+            },
+            {
+              "q": "Чем канал релиза отличается от флага ревью?",
+              "a": "**Канал** (stable/production/qa) — метка продвижения: «какую версию сейчас брать». **Флаг** (красный/жёлтый/синий/зелёный) — вердикт ручной проверки. Обе метки ставятся на релиз целиком и расставляются по версиям входящих пакетов."
             },
             {
               "q": "Как переключить тему оформления?",
-              "a": "**Настройки → Оформление**, либо команда «Тема» в палитре (Ctrl+K). Доступны Dark, Warm и Classic."
+              "a": "Меню «Настройки → Тема» — мгновенно, либо «Настройки → Настройки… → Оформление» с предпросмотром. Доступны Тёмная, Тёплая и Классическая."
             },
             {
-              "q": "Что значит точка рядом с файлом в дереве?",
-              "a": "Файл изменён и ещё не сохранён или не закоммичен."
+              "q": "Как сменить язык интерфейса?",
+              "a": "«Настройки → Настройки… → Общие → Язык». Применяется сразу, без перезапуска."
+            },
+            {
+              "q": "Где хранятся токены серверов?",
+              "a": "Локально, в настройках приложения на вашей машине. В git-репозитории конфигурации и в сессии они не попадают."
+            },
+            {
+              "q": "Как отправить пакет сразу на несколько серверов?",
+              "a": "В «Профилях серверов» отметьте нужные серверы как «Push-цель». Push пакета развернётся параллельно на все отмеченные серверы — прогресс виден в окне статуса."
+            },
+            {
+              "q": "Дерево объектов в админ-панели пустое или не открывается.",
+              "a": "Проверьте, что сервер доступен («Проверить подключение» в профиле) и что схема URL верная: для http-сервера админка ходит по ws, для https — по wss. После смены URL переподключитесь: «Вид → Админ-панели → Отключиться от сервера» и откройте панель заново."
+            },
+            {
+              "q": "Как обновить справку?",
+              "a": "Кнопка «Обновить справку» в шапке этого окна. Справка также сама тихо проверяет обновления при открытии — нужен только доступ в интернет."
             }
           ]
         },
         {
-          "id": "shortcuts",
-          "title": "Горячие клавиши",
-          "file": "shortcuts.md"
+          "id": "troubleshooting",
+          "title": "Решение проблем",
+          "file": "troubleshooting.md",
+          "summary": "Что делать, когда что-то не работает.",
+          "seeAlso": ["faq", "logs"]
         },
         {
-          "id": "troubleshooting",
-          "title": "Устранение неполадок",
-          "file": "troubleshooting.md",
-          "seeAlso": ["faq"]
+          "id": "shortcuts",
+          "title": "Горячие клавиши",
+          "file": "shortcuts.md",
+          "summary": "Все сочетания клавиш на одной странице.",
+          "seeAlso": ["shortcuts-setup"]
         }
       ]
     }
