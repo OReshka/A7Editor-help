@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-06-10.1",
+  "contentVersion": "2026-06-10.2",
   "sections": [
     {
       "id": "getting-started",
@@ -115,9 +115,9 @@
         },
         {
           "id": "type-review",
-          "title": "Ревью типа",
+          "title": "Проверка изменений схемы",
           "file": "type-review.md",
-          "summary": "Табличный обзор полей и методов типа с замечаниями.",
+          "summary": "Анализатор проверяет изменения схемы перед применением.",
           "seeAlso": ["check", "inheritance"]
         },
         {
