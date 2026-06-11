@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-06-10.28",
+  "contentVersion": "2026-06-11.29",
   "sections": [
     {
       "id": "getting-started",
@@ -13,14 +13,21 @@
           "file": "welcome.md",
           "format": "hub",
           "summary": "Что такое A7Editor и с чего начать.",
-          "cards": ["quickstart", "interface", "download", "connect", "faq", "shortcuts"]
+          "cards": ["first-start", "quickstart", "interface", "download", "connect", "faq", "shortcuts"]
+        },
+        {
+          "id": "first-start",
+          "title": "Первый старт",
+          "file": "first-start.md",
+          "summary": "Открытие конфигурации, автоскачивание пакетов и настройка git при первом запуске.",
+          "seeAlso": ["download", "git-setup", "versions", "quickstart"]
         },
         {
           "id": "quickstart",
           "title": "Быстрый старт",
           "file": "quickstart.md",
-          "summary": "От запуска до первого push за 10 минут.",
-          "seeAlso": ["download", "connect", "check", "push"]
+          "summary": "Рабочий цикл: правка типа, проверка и push на сервер.",
+          "seeAlso": ["first-start", "download", "connect", "check", "push"]
         },
         {
           "id": "interface",
