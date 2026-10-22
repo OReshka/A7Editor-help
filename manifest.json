@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-06-11.30",
+  "contentVersion": "2026-10-22.31",
   "sections": [
     {
       "id": "getting-started",
@@ -308,7 +308,7 @@
           "title": "Обновление приложения",
           "file": "app-update.md",
           "summary": "Проверка обновлений, установка и откат.",
-          "seeAlso": ["help-update"]
+          "seeAlso": ["whats-new", "help-update"]
         },
         {
           "id": "help-update",
@@ -324,6 +324,13 @@
       "title": "Справочник",
       "icon": "info",
       "articles": [
+        {
+          "id": "whats-new",
+          "title": "Что нового",
+          "file": "whats-new.md",
+          "summary": "Изменения редактора по версиям; окно после обновления.",
+          "seeAlso": ["app-update", "help-update"]
+        },
         {
           "id": "faq",
           "title": "Частые вопросы (FAQ)",
