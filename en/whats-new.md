@@ -32,6 +32,10 @@ shows the section of its new version once, in the "What's new" window.
   is updated, along with `.dbo` and `packet.yaml`. Open documents are saved
   first.
 
+- **Clones are safe.** A packet folder with commits but no `packet.yaml` is
+  no longer deleted and downloaded again. The editor leaves it as is and
+  reports an error.
+
 ## 1.6.0
 
 - **Descendants are pushed to the A7/19 server.** The A7/19 server does
