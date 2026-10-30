@@ -6,6 +6,32 @@ shows the section of its new version once, in the "What's new" window.
 > "Settings → General → What's new after updates". The same switch
 > turns it back on.
 
+## 1.7.0
+
+- **GitLab alongside GitHub.** The editor works with several git servers at
+  once. Set a token per server in "Settings → Git → Server tokens"; it works
+  in both SSH and HTTPS modes.
+- **Moved repositories.** When the configuration manifest gives a packet an
+  address on another server with the same repository name, the editor
+  re-points the clone's `origin` when the configuration opens and on bulk
+  pull. It switches only if the new address answers; otherwise the clone
+  stays on the old server and the log shows a warning. Other projects and
+  forks are left alone.
+- **WD widget blocks.** `a7dbojs` accepts nested widgets for the v26 server,
+  such as `body: Circle { radius: this.size / 2; }`. Packets without blocks
+  are unaffected: their `.dbo` does not change.
+- **Type review.**
+  - Removing a member no longer fails with "member not found".
+  - Decisions are applied by uid and as a whole: on an error the files go
+    back to their original state.
+  - Unanswered members stop the changes from being applied.
+  - A field moved to the parent keeps its uid.
+  - Changing `extends` also checks descendants, and a descendant's issue is
+    shown once, on its own file.
+- **Renaming a type.** Every reference in all packets of the configuration
+  is updated, along with `.dbo` and `packet.yaml`. Open documents are saved
+  first.
+
 ## 1.6.0
 
 - **Descendants are pushed to the A7/19 server.** The A7/19 server does
