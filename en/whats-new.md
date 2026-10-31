@@ -6,6 +6,18 @@ shows the section of its new version once, in the "What's new" window.
 > "Settings → General → What's new after updates". The same switch
 > turns it back on.
 
+## 1.7.1
+
+- **A clear message when a token is missing.** If repositories moved to another
+  server and you have no access to it, the editor names the server and offers an
+  "Open Git settings" button. The message stays until the problem is solved. A
+  wrong token gets its own message.
+- **Switching right after you enter a token.** Once you save a token in the
+  settings, the editor retries moving the repositories to their new address, with
+  no restart. Update their contents with "Pull all changes".
+- **An honest pull summary.** If some repositories were pulled from their old
+  address, the log says how many.
+
 ## 1.7.0
 
 - **GitLab alongside GitHub.** The editor works with several git servers at
